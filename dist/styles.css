@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Handlee&display=swap");
+
+:root {
+  --main-bg-color: #99f6e4;
+  --text-color: #f8fafc;
+  --body-background: #f4f4f5;
+  --main-font: "Handlee";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--main-font), cursive;
+}
+body {
+  background-color: var(--body-background);
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+/* Header Section */
+.todo-header {
+  height: 20%;
+  width: 100%;
+  background-color: var(--main-bg-color);
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-color);
+  box-shadow: 0 4px 2px -2px grey;
+}
+
+.todo-logo {
+  display: flex;
+  margin-top: 2.5em;
+  margin-left: 1em;
+  font-size: 1.5rem;
+}
+
+img {
+  height: 2em;
+  margin-top: 0.2em;
+}
+
+.user-info {
+  display: flex;
+  gap: 1.5em;
+  font-size: 1.3rem;
+  margin-right: 1.5em;
+  margin-top: 4em;
+}
+
+/* Body Section */
+
+.todo-body {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5em;
+  align-self: center;
+}
+
+#tasks-input {
+  border-radius: 15px;
+  width: 35em;
+  height: 1.2em;
+  border: 3px solid var(--main-bg-color);
+  outline: none;
+  color: var(--main-bg-color);
+  padding: 0.5em;
+  margin-left: 3em;
+}
+
+::placeholder {
+  color: var(--main-bg-color);
+}
+
+.task-add-button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--main-bg-color);
+  cursor: pointer;
+}
+
+/* Body section where task are printed*/
+
+.task-title {
+  text-align: center;
+  color: var(--main-bg-color);
+  font-size: 2rem;
+  visibility: hidden;
+  width: auto;
+}
+
+/* Tasks*/
+
+.tasks {
+  display: flex;
+  border: 3px solid var(--main-bg-color);
+  border-radius: 15px;
+  margin-top: 0.5em;
+  width: 35em;
+  flex-wrap: wrap;
+}
+
+.date {
+  padding-top: 0.5em;
+  color: var(--main-bg-color);
+  margin-right: 0.5em;
+}
+
+.tasks-value {
+  width: 10em;
+  color: var(--main-bg-color);
+  padding-top: 0.5em;
+  flex-grow: 1;
+  margin-right: 0.5em;
+}
+
+.tasks-output {
+  margin-top: 1em;
+}
+
+.tasks-value,
+.edit-button,
+.remove-button,
+.date {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.5rem;
+}
+
+.edit-button {
+  color: var(--main-bg-color);
+  margin-right: 0.5em;
+}
+.edit-button,
+.remove-button {
+  cursor: pointer;
+  margin-top: 0.5em;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.remove-button {
+  color: var(--main-bg-color);
+}
+
+/*Media queries*/
+@media all and (max-width: 1024px) {
+  .todo-logo {
+    margin-top: 2em;
+  }
+  .user-info {
+    margin-top: 3.5em;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .todo-header {
+    justify-content: center;
+  }
+  .todo-logo {
+    margin-top: 2em;
+  }
+  .user-info {
+    display: none;
+  }
+}
+
+@media all and (max-width: 608px) {
+    .input-section{
+        display: flex;
+        justify-content: center;
+    }
+    #tasks-input{
+        width: 20em; 
+    }
+    
+    .tasks {
+        width: max-content; 
+  }
+}
+
+@media all and (max-width:426px){
+    .tasks-value{
+        width: 5em;
+    }
+}
+
+@media all and (max-width:376px){
+    #tasks-input{
+        width: 15em;
+    }
+}
+
+@media all and (max-width:321px){
+    #tasks-input{
+        margin-left: 1em;
+    }
+    .date, .tasks-value, .edit-button, .remove-button{
+        font-size: 1.2rem;
+    }
+}
